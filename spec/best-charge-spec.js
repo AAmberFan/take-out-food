@@ -1,3 +1,4 @@
+const bestCharge = require('../src/best-charge.js');
 describe('Take out food', function () {
 
   it('should generate best charge when best is 指定菜品半价', function() {
@@ -13,6 +14,21 @@ describe('Take out food', function () {
 指定菜品半价(黄焖鸡，凉皮)，省13元
 -----------------------------------
 总计：25元
+===================================`.trim()
+    expect(summary).toEqual(expected)
+  });
+  it('should generate best charge when best is 指定菜品半价', function() {
+    let inputs = ["ITEM0001 x 1", "ITEM0022 x 1"];
+    let summary = bestCharge(inputs).trim();
+    let expected = `
+============= 订餐明细 =============
+黄焖鸡 x 1 = 18元
+凉皮 x 1 = 8元
+-----------------------------------
+使用优惠:
+指定菜品半价(黄焖鸡，凉皮)，省13元
+-----------------------------------
+总计：13元
 ===================================`.trim()
     expect(summary).toEqual(expected)
   });

@@ -1,5 +1,15 @@
-// 请把与index.html页面相关的javascript代码写在这里
-// 同时删除该注释
+window.onload = function(){
+
+	var showItems = $("items");
+	showItems.innnerHTML = "hhhh";
+	let allItems = loadAllItems();
+	let newList;
+	for(let i of allItems){
+		newList = document.createdElement('li');
+		showItems.appendChild(i);
+	}
+
+}
 
 function calculatePrice() {
   // 想办法调用`bestCharge`并且把返回的字符串
